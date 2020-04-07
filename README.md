@@ -1,6 +1,5 @@
 # DeepWeeds_Classifier_WebApp
-Recently, we published a paper "Automated fruit recognition using EfficientNet and MixNet", can be found here:  https://doi.org/10.1016/j.compag.2020.105326
-or https://sci-hub.tw/https://doi.org/10.1016/j.compag.2020.105326
+Recently, we published a paper "XYZ", can be found here: 
 
 This is an neural network webapp visualizing the training of the network and testing accuracy ~ 99% accuracy.
 The neural network uses pretrained EfficientNet_Lite4 and then trained to classify images of weeds.
@@ -16,10 +15,9 @@ EfficientNet family was introduced by a paper from Google Brain at https://arxiv
 And codes for the EfficientNet family were hacked by Ross Wrightman. Thank Ross for his fantastic work to create valuable models for image classification tasks on PyTorch. We can find the codes of Ross here: https://github.com/rwightman/pytorch-image-models and https://github.com/rwightman/gen-efficientnet-pytorch
 * You can download the trained weight of EfficientNet_Lite4 model [here](https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/release/EfficientNet_Lite4_SGD.pth) and other trained weights.   
 
-       
-
 ## Flow:
-* to reproduce our experiments in our paper, you can use [EfficientNet_Lite4_SGD.ipynb] (https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/Notebooks/EfficientNet_Lite4_SGD.ipynb)
+* To reproduce our experiments in our paper, you can use NoteBook folder [here] (https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/Notebooks/)
+* Predicted results of our models can be examed [here] (https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/Results/)
 * Input image is fed and transformed using : [commons.py](https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/commons.py)     
 * Inference is done by : [inference.py](htttps://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/inference.py) 
 * Run on local web: [app.py] (https://github.com/linhduongtuan/DeepWeeds_Classifier_WebApp/blob/master/app.py) 
