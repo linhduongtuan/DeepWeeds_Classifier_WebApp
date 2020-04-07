@@ -1,0 +1,5 @@
+{
+	"name": "Pytorch DeepWeeds",
+	"description": "DeepWeeds Classifier built using PyTorch and EfficientNet family",
+	"keywords": ["python","flask","pytorch","bootstrap"]
+}
