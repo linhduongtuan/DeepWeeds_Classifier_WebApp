@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from models import get_model_fruits, get_model_weeds, get_tensor, get_weed_name
+from models import get_model_fruits, get_model_weeds, get_tensor, get_weed_name, get_fruit_name
 import os 
 from math import floor
 
@@ -14,13 +14,22 @@ model_fruits = get_model_fruits()
 def index():
     return render_template('index.html')
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+   
 
-@app.route('/inference_weeds', methods = ['POST'])  
-def success():  
-    if request.method == 'POST':  
+@app.route('/weed_prediction')
+def weed_prediction():
+    return render_template('weed_prediction.html')
+
+@app.route('/inference_weeds', methods = ['POST'])
+def success():
+    if request.method == 'POST':
         f = request.files['file']
         print(request.files)
         if 'file' not in request.files:
@@ -29,15 +38,15 @@ def success():
         file = request.files['file']
         image = file.read()
         top_probs, top_labels, top_weeds = get_weed_name(image_bytes=image)
-        get_weed_name(image_bytes=image)
-        tensor = get_tensor(image_bytes=image)
-        print(get_tensor(image_bytes=image))
         return render_template('inference_Weeds.html', weeds=top_weeds, name_weeds=top_labels, probabilities_weeds=top_probs)
 
-"""
-@app.route('/inference_fruits', methods = ['POST'])  
-def success():  
-    if request.method == 'POST':  
+@app.route('/fruit_prediction')
+def fruit_prediction():
+    return render_template('fruit_prediction.html')
+
+@app.route('/inference_fruits', methods = ['POST'])
+def archive():
+    if request.method == 'POST':
         f = request.files['file']
         print(request.files)
         if 'file' not in request.files:
@@ -46,12 +55,11 @@ def success():
         file = request.files['file']
         image = file.read()
         top_probs, top_labels, top_fruits = get_fruit_name(image_bytes=image)
-        get_fruits_name(image_bytes=image)
-        tensor = get_tensor(image_bytes=image)
-        print(get_tensor(image_bytes=image))
-        return render_template('inference_Fruits.html', fruits=top_fruits, name_fruits=top_labels, probabilities_fruits=top_probs) 
-"""
+        return render_template('inference_Fruits.html', fruits=top_fruits, name_fruits=top_labels, probabilities_fruits=top_probs)
+
 
 if __name__== '__main__':
+    print('Loading website')
+    print('To open local website, please click on an address at below')
     app.run(debug=True)
  
