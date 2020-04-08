@@ -9,11 +9,13 @@ def hello_world():
     if request.method == 'GET':
         return render_template('index.html', value='hi')
     if request.method == 'POST':
-        print(request.files)
         if 'file' not in request.files:
             print('file not uploaded')
             return
         file = request.files['file']
+	saveLocation = f.filename
+        f.save(saveLocation)
+        print(request.files)
         image = file.read()
         top_probs, top_labels, top_weeds = get_weed_name(image_bytes=image)
         get_weed_name(image_bytes=image)
