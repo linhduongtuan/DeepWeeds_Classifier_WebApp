@@ -17,7 +17,7 @@
     <form action="/inference_weeds" method="POST" enctype="multipart/form-data">
       <div class="input-group">
         <div class="custom-file">
-          <input type="file" name="file" accept=".jpg, .jpeg, .png" class="custom-file-input" id="inputGroupFile"
+          <input type="file" name="file" accept=".jpg, .jpeg, .png, .tiff" class="custom-file-input" id="inputGroupFile"
             aria-describedby="inputGroupFileAddon04">
           <label class="custom-file-label" for="inputGroupFile">Choose file</label>
         </div>
@@ -34,7 +34,6 @@
         <p class="text-muted">
           By default, this app uses EfficientNet_Lite4 model, train on 9 classes of weeds collected in Australia, and bases on models hacked by Ross Wrightman <br> <a
           href="https://github.com/rwightman/pytorch-image-models"> View on GitHub</a> .
-          This can be easily changed with any custom deep learning model.
         </p>
       </center>
     </div>
