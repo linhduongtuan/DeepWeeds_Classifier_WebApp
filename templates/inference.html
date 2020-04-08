@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <p class="lead">File uploaded successfully. You have uploaded an image of</p>
+    <h1 class="display-20">{{ weeds }}!</h1>
+    <p class="mt-5">Class ID: <strong>{{ name_weeds }}</strong></p>
+    <p class="mt-5">Top 5 Probabilities: <strong>{{ probabilities_weeds }}</strong></p>
+    <p class="mt-5"> <a href="/">Try again</a></p>
+</div>
+
+{% endblock %}
